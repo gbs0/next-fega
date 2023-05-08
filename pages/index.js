@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import 'tailwindcss/tailwind.css'
-import 'preline'
 
 export default function Home() {
   return (
