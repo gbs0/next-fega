@@ -6,7 +6,7 @@ export default class extends Controller {
     // let container = document.querySelector(".container");
     // let btn = document.getElementById("spin");
 
-    static targets = ["roulette", "button"]
+    static targets = ["roulette", "button", "counter"]
 
     connect() {
         toastr.options = {
@@ -15,12 +15,8 @@ export default class extends Controller {
             "newestOnTop": true,
             "progressBar": true,
             "positionClass": "toast-top-right",
-            "preventDuplicates": false,
-            "onclick": null,
-            "showDuration": "5000",
-            "hideDuration": "500",
-            "timeOut": "2000",
-            "extendedTimeOut": "1000",
+            "preventDuplicates": true,
+            "timeOut": "5000",
             "showEasing": "linear",
             "hideEasing": "linear",
             "showMethod": "fadeIn",
@@ -29,15 +25,24 @@ export default class extends Controller {
     }
 
     rotate(event) {
-        console.dir(event.currentTarget)
-        event.currentTarget.disabled = true
+        console.dir(event.currentTarget.style)
+        this.disableSpin()
         let number = Math.ceil(Math.random() * 1000);    
 
         this.rouletteTarget.style.transform = "rotate(" + number + "deg)";
-        number += Math.ceil(Math.random() * 1000);
-        toastr.warning("Voce poderá jogar de novo em 5 segundos!")
+        // number += Math.ceil(Math.random() * 1000);
+        toastr.warning("Voce poderá jogar de novo em alguns segundos!")
+        
+    }
+
+    enableSpin() {
+        this.buttonTarget.disabled = false
+    }
+
+    disableSpin() {
+        this.buttonTarget.disabled = true
         setTimeout(() => {
-            this.buttonTarget.disabled = false
+            this.enableSpin()
         }, 5000);
     }
 }
