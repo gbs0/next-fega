@@ -9,6 +9,7 @@ export default class extends Controller {
     static targets = ["roulette", "button", "counter"]
 
     connect() {
+        this.setCounter()
         toastr.options = {
             "closeButton": true,
             "debug": false,
@@ -26,23 +27,43 @@ export default class extends Controller {
 
     rotate(event) {
         console.dir(event.currentTarget.style)
-        this.disableSpin()
-        let number = Math.ceil(Math.random() * 1000);    
-
-        this.rouletteTarget.style.transform = "rotate(" + number + "deg)";
+        this.disableBtn()
+        this.startSpin()
         // number += Math.ceil(Math.random() * 1000);
-        toastr.warning("Voce poderá jogar de novo em alguns segundos!")
-        
+        toastr.warning("Voce poderá jogar de novo em alguns segundos!")   
     }
 
-    enableSpin() {
+    startSpin() {
+        let number = Math.ceil(Math.random() * 1000);    
+        this.rouletteTarget.style.transform = "rotate(" + number + "deg)";
+    }
+
+    enableBtn() {
+        this.buttonTarget.style.backgroundColor = "#e2e2e2"
+        this.buttonTarget.style.color = "#a2a2a2"
         this.buttonTarget.disabled = false
     }
 
-    disableSpin() {
+    disableBtn() {
         this.buttonTarget.disabled = true
+        this.buttonTarget.style.color = "#505050"
+        this.buttonTarget.style.backgroundColor = "#505050"
         setTimeout(() => {
-            this.enableSpin()
+            this.enableBtn()
         }, 5000);
+    }
+
+    setCounter() {
+        this.counterTarget.innerText = 5
+    }
+
+    decrementCounter() {
+        let count = parseInt(this.counterTarget.innerText, 10)
+        this.counterTarget.innerText = (count - 1)
+    }
+    
+    incrementCounter() {
+        let count = parseInt(this.counterTarget.innerText, 10)
+        this.counterTarget.innerText = (count + 1)
     }
 }

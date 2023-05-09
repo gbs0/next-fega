@@ -27,6 +27,7 @@ export default function Main() {
                         </div>
                     </div>
                 </main>
+                <p className="text-lg text-gray-300">Você tem: <span data-spin-target="counter">1</span> chance(s).</p>
             </div>
         </div>
     )

@@ -107,4 +107,5 @@
 	cursor: pointer;
 	outline:none;
 	letter-spacing: 1px;
+	transition: 0.5s;
 }
