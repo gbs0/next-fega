@@ -13,7 +13,7 @@ export default function Main() {
                 <main id="content" role="main">
                 <div className="text-center py-10 px-4 sm:px-6 lg:px-8">
                     <h1 className="block text-2xl font-bold text-white sm:text-4xl">Bem Vinda!</h1>
-                    <p className="mt-3 text-lg text-gray-300">Isso não é um teste, você está com o poder de escolha de algumas quem podem mudar o seu relacionamento, portanto, escolha com sabedoria...</p>
+                    <p className="mt-3 text-lg text-gray-300">Isso não é um teste, você está com o poder de escolha de algumas coisas quem podem mudar o seu relacionamento, portanto, escolha com sabedoria...</p>
                     
                     <div className="mt-5 flex flex-col justify-center items-center gap-2 sm:flex-row sm:gap-3">
                         <a className="w-full sm:w-auto inline-flex justify-center items-center gap-x-3.5 text-center border border-2 border-gray-600 shadow-sm text-sm font-medium rounded-md text-gray-300 hover:text-white hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition py-3 px-4" href="/">
