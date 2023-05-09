@@ -1,11 +1,28 @@
 import { Controller } from "@hotwired/stimulus"
 import Swal from 'sweetalert2'
-import toastr from "toastr"
+import toastr from 'toastr'
 
 export default class extends Controller {
   static targets = ['counter']
   
   connect() {
+    toastr.options = {
+      "closeButton": false,
+      "debug": false,
+      "newestOnTop": true,
+      "progressBar": true,
+      "positionClass": "toast-top-right",
+      "preventDuplicates": false,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "2000",
+      "extendedTimeOut": "1000",
+      "showEasing": "linear",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
     this.setCounter()
   }
 
@@ -25,7 +42,6 @@ export default class extends Controller {
         this.invokeNotification(event.currentTarget)
         this.decrementCounter()
         this.checkVictory()
-        
     }
     else {
         this.incrementCounter()
@@ -46,8 +62,7 @@ export default class extends Controller {
   }
 
   invokeNotification(prop) {
-    console.dir(prop.dataset)
-    toastr.info('Are you the 6 fingered man?')
+    toastr.success(`Ótima escolha! Ser ${prop.dataset.emotion} é um diferencial.`)
   }
 
   invokeModal() {

@@ -12,17 +12,17 @@ export default function Home() {
 
       <main>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to C.R.N
         </h1>
 
         <p className={styles.description}>
-          Get started by editing <code>pages/index.js</code>
+          Central Relacionamento Natural <code>pages/index.js</code>
         </p>
 
         <div className={styles.grid}>
           <a href="/main" className={styles.card}>
-            <h3>Start Game &rarr;</h3>
-            <p>Find in-depth information about what comes next.</p>
+            <h3>Iniciar experiência &rarr;</h3>
+            <p>Descubra respostas profundas sobre o que está por vir...</p>
           </a>
 
           <a href="https://nextjs.org/learn" className={styles.card}>
