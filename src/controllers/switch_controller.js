@@ -14,7 +14,7 @@ export default class extends Controller {
   dispatch(event){
     if (event.currentTarget.checked) {
         this.decrementCounter()
-        checkVictory()
+        this.checkVictory()
     }
     else {
         this.incrementCounter()
@@ -26,8 +26,14 @@ export default class extends Controller {
     if (points == "0") {
         let modalPartial = `
         `
-        
+        setTimeout(() => {
+            this.invokeModal()
+          }, 1500);
     }
+  }
+
+  invokeModal() {
+    alert("Você não tem mais pontos possiveis ):")
   }
 
   decrementCounter() {
