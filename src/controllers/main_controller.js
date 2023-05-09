@@ -42,10 +42,16 @@ export default class extends Controller {
   }
 
   invokeModal() {
-    let sweetModal = `You can use <b>bold text</b>
-    <a href="//sweetalert2.github.io">links</a>
-    and other HTML tags
-    `
+    let sweetModal = `<div class="wrapper">
+    <div class="container" data-controller="wheel">
+      <canvas id="wheel"></canvas>
+      <button id="spin-btn">Spin</button>
+      <img src="spinner-arrow-.svg" alt="spinner-arrow" />
+    </div>
+    <div id="final-value">
+      <p>Click On The Spin Button To Start</p>
+    </div>
+  </div>`
     Swal.fire({
       title: '<strong>HTML <u>example</u></strong>',
       icon: 'error',
