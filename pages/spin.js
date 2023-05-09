@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import styles from '../styles/Spin.module.css';
+import style from '../styles/Spin.module.css';
 import 'tailwindcss/tailwind.css'
 
 export default function Main() {
@@ -10,28 +10,21 @@ export default function Main() {
                 <title>Layout Test</title>
             </Head>
             <div className="max-w-[50rem] flex flex-col mx-auto w-full h-full">
+                <h1 className="py-4 mt-3 text-lg text-center text-gray-300">Gire a roleta</h1>
                 <main id="content" role="main">
-                <div id="roulette" class="roulette-wheel">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 402 402">
-                        <path id="curve2" fill="none" transform="rotate(15)" d="M50,201c0-83.4,67.6-151,151-151s151,67.6,151,151"/>
-                        <text width="500" text-anchor="middle">
-                        <textPath startOffset="50%" xlink:href="#curve2">
-                            Lauren</textPath>
-                        </text>
-                        <path id="curve3" fill="none" transform="rotate(135)" d="M50,201c0-83.4,67.6-151,151-151s151,67.6,151,151"/>
-                        <text width="500" text-anchor="middle">
-                        <textPath startOffset="50%" xlink:href="#curve3">
-                            Cam</textPath>
-                        </text>
-                        <path id="curve4" fill="none" transform="rotate(255)" d="M50,201c0-83.4,67.6-151,151-151s151,67.6,151,151"/>
-                        <text width="500" text-anchor="middle">
-                        <textPath startOffset="50%" xlink:href="#curve4">
-                            James</textPath>
-                        </text>
-                    </svg>
-                    </div>
-                    <div>
-                        <button id="roulette-trigger">Do the Thing</button>
+                    <div data-controller="spin"className={style.rouletteBody}>
+                        <button className={style.spin} data-action="click->spin#rotate" data-spin-target="button">Girar</button>
+                        <span className={style.arrow}></span>
+                        <div id="roulette" data-spin-target="roulette" className={style.roulette}>
+                            <div className={style.one}>1</div>
+                            <div className={style.two}>2</div>
+                            <div className={style.three}>3</div>
+                            <div className={style.four}>4</div>
+                            <div className={style.five}>5</div>
+                            <div className={style.six}>6</div>
+                            <div className={style.seven}>7</div>
+                            <div className={style.eight}>8</div>
+                        </div>
                     </div>
                 </main>
             </div>
