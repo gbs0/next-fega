@@ -8,7 +8,7 @@ export default class extends Controller {
   }
 
   setCounter() {
-    this.counterTarget.innerText = 7 
+    this.counterTarget.innerText = 7
   }
 
   dispatch(event){
@@ -26,9 +26,10 @@ export default class extends Controller {
     if (points == "0") {
         let modalPartial = `
         `
+        this.uncheckAll()
         setTimeout(() => {
             this.invokeModal()
-          }, 1500);
+          }, 800);
     }
   }
 
@@ -46,11 +47,12 @@ export default class extends Controller {
     this.counterTarget.innerText = (count + 1)
   }
 
-  forEachSwitchInBox() {
-    // this.element.querySelectorAll("#switch").forEach(checkbox => {
-    //     if (checkbox.checked) {
-    //         this.decrementCounter()
-    //     }
-    // });
+  uncheckAll() { // Uncheck all then reset points to 7 again
+    this.element.querySelectorAll("#switch").forEach(checkbox => {
+        if (checkbox.checked) {
+            checkbox.checked = !checkbox.checked
+        }
+    });
+    this.setCounter()
   }
 }
