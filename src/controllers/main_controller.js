@@ -1,16 +1,23 @@
 import { Controller } from "@hotwired/stimulus"
+import Swal from 'sweetalert2'
 
 export default class extends Controller {
   static targets = ['counter']
   
   connect() {
-    this.setCounter()    
+    this.setCounter()
   }
 
   setCounter() {
     this.counterTarget.innerText = 7
   }
 
+  verifyCounterIntegrity() {
+    let points = parseInt(this.counterTarget.innerText, 10)
+    if (points > 7) {
+      this.setCounter()
+    }
+  }
   dispatch(event){
     if (event.currentTarget.checked) {
         this.decrementCounter()
@@ -24,17 +31,36 @@ export default class extends Controller {
   checkVictory() {
     const points  = this.counterTarget.innerText
     if (points == "0") {
-        let modalPartial = `
-        `
         this.uncheckAll()
         setTimeout(() => {
             this.invokeModal()
           }, 800);
     }
+    else {
+      this.verifyCounterIntegrity()
+    }
   }
 
   invokeModal() {
-    alert("Você não tem mais pontos possiveis ):")
+    let sweetModal = `You can use <b>bold text</b>
+    <a href="//sweetalert2.github.io">links</a>
+    and other HTML tags
+    `
+    Swal.fire({
+      title: '<strong>HTML <u>example</u></strong>',
+      icon: 'error',
+      html:
+        sweetModal,
+      showCloseButton: false,
+      showCancelButton: false,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Great!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      cancelButtonText:
+        '<i class="fa fa-thumbs-down"></i>',
+      cancelButtonAriaLabel: 'Thumbs down'
+    })
   }
 
   decrementCounter() {
