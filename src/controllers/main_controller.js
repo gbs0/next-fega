@@ -1,5 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 import Swal from 'sweetalert2'
+import toastr from "toastr"
 
 export default class extends Controller {
   static targets = ['counter']
@@ -18,10 +19,13 @@ export default class extends Controller {
       this.setCounter()
     }
   }
+
   dispatch(event){
     if (event.currentTarget.checked) {
+        this.invokeNotification(event.currentTarget)
         this.decrementCounter()
         this.checkVictory()
+        
     }
     else {
         this.incrementCounter()
@@ -41,19 +45,16 @@ export default class extends Controller {
     }
   }
 
+  invokeNotification(prop) {
+    console.dir(prop.dataset)
+    toastr.info('Are you the 6 fingered man?')
+  }
+
   invokeModal() {
-    let sweetModal = `<div class="wrapper">
-    <div class="container" data-controller="wheel">
-      <canvas id="wheel"></canvas>
-      <button id="spin-btn">Spin</button>
-      <img src="spinner-arrow-.svg" alt="spinner-arrow" />
-    </div>
-    <div id="final-value">
-      <p>Click On The Spin Button To Start</p>
-    </div>
-  </div>`
+    let sweetModal = `
+      `
     Swal.fire({
-      title: '<strong>HTML <u>example</u></strong>',
+      title: '<strong>Infelizmente suas escolhas <u>acabaram</u></strong>',
       icon: 'error',
       html:
         sweetModal,
@@ -61,7 +62,7 @@ export default class extends Controller {
       showCancelButton: false,
       focusConfirm: false,
       confirmButtonText:
-        '<i class="fa fa-thumbs-up"></i> Great!',
+        '<a href="/spin" target="_blank"><i class="fa fa-thumbs-up"></i> OK, quero continuar!</a>',
       confirmButtonAriaLabel: 'Thumbs up, great!',
       cancelButtonText:
         '<i class="fa fa-thumbs-down"></i>',
