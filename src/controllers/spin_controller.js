@@ -25,12 +25,24 @@ export default class extends Controller {
         }
     }
 
-    rotate(event) {
-        console.dir(event.currentTarget.style)
-        this.disableBtn()
-        this.startSpin()
-        // number += Math.ceil(Math.random() * 1000);
-        toastr.warning("Voce poderá jogar de novo em alguns segundos!")   
+    rotate() {
+        if (this.spinIsPossible()) {
+            this.disableBtn()
+            this.decrementCounter()
+            this.startSpin()
+            // number += Math.ceil(Math.random() * 1000);
+            toastr.warning("Voce poderá jogar de novo em alguns segundos!")   
+        } else {
+            setTimeout(() => {
+                alert("Voce perdeu ):")
+            }, 800);
+        }
+        
+    }
+
+    spinIsPossible() {
+        let points = parseInt(this.counterTarget.innerText, 10)
+        return points >= 1
     }
 
     startSpin() {
@@ -54,7 +66,7 @@ export default class extends Controller {
     }
 
     setCounter() {
-        this.counterTarget.innerText = 5
+        this.counterTarget.innerText = 2
     }
 
     decrementCounter() {

@@ -11,8 +11,8 @@ export default function Main() {
             </Head>
             <div className="max-w-[50rem] flex flex-col mx-auto w-full h-full">
                 <h1 className="py-4 mt-3 text-lg text-center text-gray-300">Gire a roleta</h1>
-                <main id="content" role="main">
-                    <div data-controller="spin"className={style.rouletteBody}>
+                <main id="content" role="main" data-controller="spin">
+                    <div className={style.rouletteBody}>
                         <button className={style.spin} data-action="click->spin#rotate" data-spin-target="button">Girar</button>
                         <span className={style.arrow}></span>
                         <div id="roulette" data-spin-target="roulette" className={style.roulette}>
@@ -26,8 +26,8 @@ export default function Main() {
                             <div className={style.eight}>8</div>
                         </div>
                     </div>
+                    <p className="text-lg text-center text-gray-300">Você tem: <span data-spin-target="counter">1</span> chance(s).</p>
                 </main>
-                <p className="text-lg text-gray-300">Você tem: <span data-spin-target="counter">1</span> chance(s).</p>
             </div>
         </div>
     )
