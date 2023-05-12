@@ -10,7 +10,7 @@ export default function Main() {
                 <title>Layout Test</title>
             </Head>
             <div className="max-w-[50rem] flex flex-col mx-auto w-full h-full">
-                <h1 className="py-4 mt-3 text-lg text-center text-gray-300">Gire a roleta</h1>
+                <h1 className="py-4 mt-2 text-lg text-center text-gray-300">Gire a roleta</h1>
                 <main id="content" role="main" data-controller="spin">
                     <div className={style.rouletteBody}>
                         <button className={style.spin} data-action="click->spin#rotate" data-spin-target="button">Girar</button>
@@ -26,7 +26,9 @@ export default function Main() {
                             <div className={style.eight}>8</div>
                         </div>
                     </div>
-                    <p className="text-lg text-center text-gray-300">Você tem: <span data-spin-target="counter">1</span> chance(s).</p>
+                    <div>
+                        <p className="text-lg text-center text-gray-300">Você tem: <span data-spin-target="counter">1</span> chance(s).</p>
+                    </div>
                 </main>
             </div>
         </div>
