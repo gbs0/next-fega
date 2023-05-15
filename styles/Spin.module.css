@@ -8,7 +8,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	/* height:80vh; */
+	height:80vh;
 	overflow:hidden;
 }
 
@@ -76,8 +76,8 @@
 
 .arrow {
 	position: absolute;
-	top:10%;
-	left:50%;
+	top: 10%;
+	left: 50%;
 	transform: translateY(30%);
 	color:#dde;
 	rotate: 90deg;
@@ -85,15 +85,15 @@
 }
 
 .arrow::before {
-	content:'\25BA';
-	font-size:50px;
+	content: '\25BA';
+	font-size: 50px;
 }
 
 .spin {
-	position: absolute;
+	/* position: absolute;
 	top:50%;
 	left:50%;
-	transform:translate(-50%,-50%);
+	transform:translate(-50%,-50%); */
 	z-index:10;
 	background-color: #e2e2e2;
 	text-transform: uppercase;
@@ -109,4 +109,11 @@
 	outline: none;
 	letter-spacing: 1px;
 	transition: 0.5s;
+}
+
+.buttonDrawer {
+	position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

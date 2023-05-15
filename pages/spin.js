@@ -13,7 +13,9 @@ export default function Main() {
                 <h1 className="py-4 mt-2 text-lg text-center text-gray-300">Gire a roleta</h1>
                 <main id="content" role="main" data-controller="spin">
                     <div className={style.rouletteBody}>
-                        <button className={style.spin} data-action="click->spin#rotate" data-spin-target="button">Girar</button>
+                        <div className={style.buttonDrawer}>
+                            <button className={style.spin} data-action="click->spin#rotate" data-spin-target="button">Girar</button>
+                        </div>
                         <span className={style.arrow}></span>
                         <div id="roulette" data-spin-target="roulette" className={style.roulette}>
                             <div className={style.one}>1</div>
