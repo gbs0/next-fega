@@ -3,9 +3,7 @@ import Swal from 'sweetalert2'
 import toastr from "toastr"
 
 export default class extends Controller {
-    // let container = document.querySelector(".container");
-    // let btn = document.getElementById("spin");
-
+    
     static targets = ["roulette", "button", "counter"]
 
     connect() {
@@ -34,7 +32,10 @@ export default class extends Controller {
     startSpin() {
         let number = Math.ceil(Math.random() * 1000);    
         this.rouletteTarget.style.transform = "rotate(" + number + "deg)"
-        
+        // Verifica se no final, ainda é possivel rodar novamente
+        if (!this.spinIsPossible()) {
+            toastr.error("Suas chances acabaram ):")
+        }
     }
 
     enableBtn() {

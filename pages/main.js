@@ -9,7 +9,6 @@ export default function Main() {
                 <title>Layout Test</title>
             </Head>
             <div className="max-w-[50rem] flex flex-col mx-auto w-full h-full">
-                <body></body>
                 <main id="content" role="main">
                 <div className="text-center py-10 px-4 sm:px-6 lg:px-8">
                     <h1 className="block text-2xl font-bold text-white sm:text-4xl">Bem Vinda!</h1>
