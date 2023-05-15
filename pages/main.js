@@ -26,8 +26,8 @@ export default function Main() {
 
                 <div className="container mx-auto px-4" data-controller="main">
                     <div className="flex flex-row items-center justify-between">
-                        <h2 className="mt-3 mb-3 text-lg text-gray-300">Selecione algumas das opções abaixo</h2>
-                        <p className="text-lg text-gray-300">Voce pode escolher: <span data-main-target="counter">1</span> opções.</p>
+                        <h2 className="mt-3 mb-3 text-lg text-gray-300">Selecione algumas das opções abaixo:</h2>
+                        <p hidden className="text-lg text-gray-300">Voce pode escolher: <span data-main-target="counter">1</span> opções.</p>
                     </div>
                     
                     <div className="switchBox">

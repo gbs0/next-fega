@@ -3,7 +3,6 @@ import Swal from 'sweetalert2'
 import toastr from "toastr"
 
 export default class extends Controller {
-    
     static targets = ["roulette", "button", "counter"]
 
     connect() {
@@ -32,10 +31,16 @@ export default class extends Controller {
     startSpin() {
         let number = Math.ceil(Math.random() * 1000);    
         this.rouletteTarget.style.transform = "rotate(" + number + "deg)"
-        // Verifica se no final, ainda é possivel rodar novamente
-        if (!this.spinIsPossible()) {
-            toastr.error("Suas chances acabaram ):")
+        if (!this.spinIsPossible()) { // Verifica se o jogo acabou
+            this.gameOver(5000)
         }
+    }
+
+    gameOver(timeout) {
+        toastr.error("Suas chances acabaram!")
+        setTimeout(() => {
+            this.invokeModal()
+        }, timeout)
     }
 
     enableBtn() {
@@ -50,7 +55,7 @@ export default class extends Controller {
         this.buttonTarget.style.backgroundColor = "#505050"
         setTimeout(() => {
             this.enableBtn()
-        }, 5000);
+        }, 5000)
     }
 
     setCounter() {
@@ -71,7 +76,7 @@ export default class extends Controller {
         let sweetModal = `
             `
         Swal.fire({
-            title: '<strong>Infelizmente suas escolhas <u>acabaram</u></strong>',
+            title: '<strong>Infelizmente suas chances <u>acabaram</u></strong>',
             icon: 'error',
             html:
             sweetModal,
