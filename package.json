@@ -5,6 +5,11 @@
     "build": "next build",
     "start": "next start"
   },
+  "browser": {
+    "fs": false,
+    "os": false,
+    "path": false
+  },
   "dependencies": {
     "@cloudinary/url-gen": "^1.10.0",
     "autoprefixer": "^10.4.14",
