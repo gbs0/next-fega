@@ -12,9 +12,12 @@ export default function Home() {
 
       <main>
         <h1 className={styles.title}>
-          Alguns exemplos disponiveis p/ acesso!
+          Divirta-se!
         </h1>
 
+        <p className={styles.description}>
+          As experiências estão disponiveís no link abaixo.
+        </p>
 
         <div className={styles.grid}>
           <a href="/main" className={styles.card}>
@@ -22,15 +25,22 @@ export default function Home() {
             <p>Descubra respostas profundas sobre o que está por vir...</p>
           </a>
 
-          
+
           <a
             href="/spin"
             className={styles.card}
           >
             <h3>Roleta &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
+            <p>Conte com a sorte p/ ganhar prémios incríveis.</p>
           </a>
 
+          <a
+            href="/galery"
+            className={styles.card}
+          >
+            <h3>Roleta &rarr;</h3>
+            <p>Conte com a sorte p/ ganhar prémios incríveis.</p>
+          </a>
         </div>
 
         <p className={styles.description}>

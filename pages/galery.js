@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import 'tailwindcss/tailwind.css'
 
-export default function Greetings() {
+export default function Galery() {
     return (
         <div className='bg-slate-900 flex h-full'>
             <Head>
