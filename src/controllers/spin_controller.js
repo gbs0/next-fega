@@ -84,7 +84,7 @@ export default class extends Controller {
             showCancelButton: false,
             focusConfirm: false,
             confirmButtonText:
-            '<a href="/spin"><i class="fa fa-thumbs-up"></i> OK, quero continuar!</a>',
+            '<a href="/spin"><i class="fa fa-thumbs-up"></i> OK, me leve ao final!</a>',
             confirmButtonAriaLabel: 'Thumbs up, great!',
             cancelButtonText:
             '<i class="fa fa-thumbs-down"></i>',

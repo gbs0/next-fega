@@ -76,17 +76,18 @@
 
 .arrow {
 	position: absolute;
-	top: 10%;
-	left: 50%;
-	transform: translateY(30%);
+	/* top: 10%; */
+	/* left: 50%;
+	transform: translateY(30%); */
 	color:#dde;
-	rotate: 90deg;
+	/* rotate: 90deg; */
 	z-index: 10;
+	transform: translateY(-220px);
 }
 
 .arrow::before {
-	content: '\25BA';
-	font-size: 50px;
+	content: '\25BC';
+	font-size: 55px;
 }
 
 .spin {
