@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import styles from '../../styles/Home.module.css';
 import 'tailwindcss/tailwind.css'
 
 export default function Home() {
@@ -12,33 +12,31 @@ export default function Home() {
 
       <main>
         <h1 className={styles.title}>
-          Bem-vindo(a)!
+          Alguns exemplos disponiveis p/ acesso!
         </h1>
 
-        <p className={styles.description}>
-          
-        </p>
-
-        <p className={styles.description}>
-          <code>Desenvolvido e criado por Gabriel Schiavo</code>
-        </p>
 
         <div className={styles.grid}>
           <a href="/main" className={styles.card}>
-            <h3>Iniciar experiência &rarr;</h3>
+            <h3>Inicio &rarr;</h3>
             <p>Descubra respostas profundas sobre o que está por vir...</p>
           </a>
 
           
           <a
-            href="/others/examples"
+            href="/spin"
             className={styles.card}
           >
-            <h3>Exemplos &rarr;</h3>
+            <h3>Roleta &rarr;</h3>
             <p>Discover and deploy boilerplate example Next.js projects.</p>
           </a>
 
         </div>
+
+        <p className={styles.description}>
+          <code>Desenvolvido e criado por Gabriel Schiavo</code>
+        </p>
+
         <script src="./assets/vendor/preline/dist/preline.js"></script>
       </main>
 
