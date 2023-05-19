@@ -3,9 +3,11 @@ import {Cloudinary} from '@cloudinary/url-gen'
 import {Resize} from '@cloudinary/url-gen/actions'
 import 'tailwindcss/tailwind.css'
 import 'dotenv/config'
+import dotenv from 'dotenv'
 
-console.log(process.env.CLOUDINARY_CLOUD)
+// console.log(process.env.CLOUDINARY_CLOUD)
 const cldInstance = new Cloudinary({cloud: {cloudName: process.env.CLOUDINARY_CLOUD}});
+// const cldInstance = new Cloudinary({cloud: {cloundName: dotenv.parse(CLOUDINARY_CLOUD)}})
 
 const myImage = cldInstance
   .image('samples/people/jazz')

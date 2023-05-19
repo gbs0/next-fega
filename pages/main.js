@@ -6,12 +6,12 @@ export default function Main() {
         <div className='bg-slate-900 flex h-full'>
             <Head>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
-                <title>Layout Test</title>
+                <title>Next Fega</title>
             </Head>
             <div className="max-w-[50rem] flex flex-col mx-auto w-full h-full">
                 <main id="content" role="main">
                 <div className="text-center py-10 px-4 sm:px-6 lg:px-8">
-                    <h1 className="block text-2xl font-bold text-white sm:text-4xl">Bem Vinda!</h1>
+                    <h1 className="block text-2xl font-bold text-white sm:text-4xl">Que os Jogos Comecem!</h1>
                     <p className="mt-3 text-lg text-gray-300">Isso não é um teste, você está com o poder de escolha de algumas coisas quem podem mudar o seu relacionamento, portanto, escolha com sabedoria...</p>
                     
                     <div className="mt-5 flex flex-col justify-center items-center gap-2 sm:flex-row sm:gap-3">
