@@ -1,7 +1,18 @@
 import Head from 'next/head';
+import {Cloudinary} from '@cloudinary/url-gen'
+import {Resize} from '@cloudinary/url-gen/actions'
 import 'tailwindcss/tailwind.css'
+import 'dotenv/config'
 
-export default function Galery() {
+console.log(process.env.CLOUDINARY_CLOUD)
+const cldInstance = new Cloudinary({cloud: {cloudName: process.env.CLOUDINARY_CLOUD}});
+
+const myImage = cldInstance
+  .image('samples/people/jazz')
+  .resize(Resize.fill().width(500))
+
+const myImageUrl = myImage.toURL()
+export default function Gallery() {
     return (
         <div className='bg-slate-900 flex h-full'>
             <Head>
@@ -23,8 +34,8 @@ export default function Galery() {
                 </div>
             </div>
             <div data-controller="greetings" data-greetings-options-value='{"index": 2}'>
-                <a href="../images/img1.png">
-                    <img src="../images/img1.png" alt="" />
+                <a href={myImageUrl}>
+                    <img src={myImageUrl} alt="" />
                 </a>
 
                 <a href="../images/img2.png">

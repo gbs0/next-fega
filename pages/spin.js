@@ -7,10 +7,13 @@ export default function Main() {
         <div className="bg-slate-900 flex h-full">
             <Head>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
-                <title>Layout Test</title>
+                <title>Next Fega</title>
             </Head>
             <div className="max-w-[50rem] flex flex-col mx-auto w-full h-full">
-                <h1 className="py-4 mt-2 text-lg text-center text-gray-300">Gire a roleta</h1>
+                <h1 className="py-2 mt-5 text-lg text-center text-gray-300">Gire a roleta!</h1>
+                <p className="text-center text-gray-500 mt-4 py-2">
+                  Algumas supresas te aguardam... ou não!
+                </p>
                 <main id="content" role="main" data-controller="spin">
                     <div className={style.rouletteBody}>
                         <div className={style.buttonDrawer}>
@@ -29,7 +32,7 @@ export default function Main() {
                         </div>
                     </div>
                     <div>
-                        <p className="text-lg text-center text-gray-300">Você tem: <span data-spin-target="counter">1</span> chance(s).</p>
+                        <p className="text-lg text-center text-gray-300 py-2">Você tem: <span data-spin-target="counter">1</span> chance(s).</p>
                     </div>
                 </main>
             </div>

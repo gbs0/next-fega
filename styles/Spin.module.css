@@ -82,7 +82,7 @@
 	color:#dde;
 	/* rotate: 90deg; */
 	z-index: 10;
-	transform: translateY(-220px);
+	transform: translateY(-225px);
 }
 
 .arrow::before {
