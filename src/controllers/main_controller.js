@@ -3,7 +3,7 @@ import Swal from 'sweetalert2'
 import toastr from 'toastr'
 
 export default class extends Controller {
-  static targets = ['counter']
+  static targets = ['counter', 'list', 'pill']
   
   connect() {
     toastr.options = {
@@ -24,27 +24,26 @@ export default class extends Controller {
       "hideMethod": "fadeOut"
     }
     this.setCounter()
+    this.cleanList()
   }
 
-  setCounter() {
-    this.counterTarget.innerText = 7
+  dispatch(event){
+    if (event.currentTarget.checked) {
+        this.invokeNotification(event.currentTarget)
+        this.insertPillInList(event.currentTarget)
+        this.decrementCounter()
+        this.checkVictory()
+    }
+    else {
+        this.incrementCounter()
+        this.removePillInList(event.currentTarget)
+    }
   }
 
   verifyCounterIntegrity() {
     let points = parseInt(this.counterTarget.innerText, 10)
     if (points > 7) {
       this.setCounter()
-    }
-  }
-
-  dispatch(event){
-    if (event.currentTarget.checked) {
-        this.invokeNotification(event.currentTarget)
-        this.decrementCounter()
-        this.checkVictory()
-    }
-    else {
-        this.incrementCounter()
     }
   }
 
@@ -61,6 +60,20 @@ export default class extends Controller {
     }
   }
 
+  insertPillInList(prop) {
+    const pill = `<li class="mx-3">
+    <span data-main-target="pill" data-emotion="${prop.dataset.emotion}" class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-pink-500 text-white">${prop.dataset.emotion}</span>
+    </li>`
+    this.listTarget.insertAdjacentHTML('beforeend', pill)
+  }
+
+  removePillInList(prop) {
+    this.pillTargets.forEach(element => {
+      if (element.dataset.emotion == prop.dataset.emotion) {
+        element.remove()
+      }
+    });
+  }
   invokeNotification(prop) {
     toastr.success(`Ótima escolha! Ser ${prop.dataset.emotion} é um diferencial.`)
   }
@@ -85,6 +98,10 @@ export default class extends Controller {
     })
   }
 
+  setCounter() {
+    this.counterTarget.innerText = 7
+  }
+
   decrementCounter() {
     let count = parseInt(this.counterTarget.innerText, 10)
     this.counterTarget.innerText = (count - 1)
@@ -102,5 +119,9 @@ export default class extends Controller {
         }
     });
     this.setCounter()
+  }
+
+  cleanList() {
+    this.listTarget.innerHTML = ""
   }
 }
