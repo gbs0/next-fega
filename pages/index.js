@@ -34,8 +34,8 @@ export default function Home() {
             href="/others/examples"
             className={styles.card}
           >
-            <h3>Exemplos &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
+            <h3>Pular Etapas &rarr;</h3>
+            <p>Antecipe o sofrimento e veja quais são as etapas disponiveis.</p>
           </a>
 
         </div>

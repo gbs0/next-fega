@@ -38,8 +38,8 @@ export default function Home() {
             href="/galery"
             className={styles.card}
           >
-            <h3>Roleta &rarr;</h3>
-            <p>Conte com a sorte p/ ganhar prémios incríveis.</p>
+            <h3>Galeria &rarr;</h3>
+            <p>Veja a exposição das diferentes imagens usadas neste projeto.</p>
           </a>
         </div>
 
