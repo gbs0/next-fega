@@ -30,7 +30,6 @@ export default class extends Controller {
 
   dispatch(event){
     if (event.currentTarget.checked) {
-        this.invokeNotification(event.currentTarget)
         this.insertPillInList(event.currentTarget)
         this.decrementCounter()
         this.checkVictory()
@@ -80,8 +79,9 @@ export default class extends Controller {
   }
 
   invokeModal() {
-    let sweetModalContent = `<div class="my-4">
-      <p class="mt-3 sm:mt-6 text-base text-gray-800 md:text-sm"><em>
+    let modalTitle = `<span class="max-w-[10rem] py-1.5 px-3 truncate whitespace-nowrap inline-block rounded-md text-sm font-medium bg-blue-100 text-blue-800">Você falhou 😢</span>`
+    let sweetModalContent = `<div class="mb-4">
+      <p class="text-base text-gray-800 md:text-sm"><em>
           " Não é de hoje que sabemos que não podemos controlar nosso destino e o que habita em nós . "
       </em><em>- MC Gorilla</em></p>
     </div>
@@ -89,14 +89,16 @@ export default class extends Controller {
     <iframe frameBorder="0" height="200" src="https://giphy.com/embed/5vqdMdZw3xCEarniOU/video" width="480"></iframe>
     </div>
     <div>
-      <p class="mt-3 sm:mt-6 text-base text-gray-800 md:text-sm">
+      <p class="my-3 sm:mt-6 text-base text-gray-800 md:text-sm">
         Mas não se preocupe, você ainda uma chance, ou pelo menos algumas...
       </p>
+      
     </div>
-    <a href="#" class="" data-controller="redirect" data-action="click->redirect#to_url" data-redirect-url-value="/spin"><i class="fa fa-thumbs-up"></i> OK, me leve a próxima etapa!</a>
+    <a href="#" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-indigo-500 text-white hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800"
+    data-controller="redirect" data-action="click->redirect#to_url" data-redirect-url-value="/spin"><i class="fa fa-thumbs-up"></i> OK, me leve a próxima etapa!</a>
       `
     Swal.fire({
-      title: '',
+      title: modalTitle,
       icon: 'error',
       html: sweetModalContent,
       showCloseButton: false,
@@ -104,7 +106,7 @@ export default class extends Controller {
       showConfirmButton: false,
       focusConfirm: true,
       confirmButtonText:
-        '<a class="d-none" data-controller="redirect" data-action="click->redirect#redirect_to" data-redirect-url-value="/spin"><i class="fa fa-thumbs-up"></i> OK, me leve a próxima etapa!</a>',
+        '<a href="#"><i class="fa fa-thumbs-up"></i> OK, me leve a próxima etapa!</a>',
       confirmButtonAriaLabel: 'Ok, me leve a próxima etapa!',
       cancelButtonText:
         '<i class="fa fa-thumbs-down"></i>',

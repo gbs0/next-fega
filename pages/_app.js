@@ -14,8 +14,8 @@ const MyApp = ({ Component, pageProps }) => {
     Stimulus.register("hello", HelloController)
     Stimulus.register("main", MainController)
     Stimulus.register("spin", SpinController)
-    Stimulus.register("greetings", Lightbox)
     Stimulus.register("redirect", RedirectController)
+    Stimulus.register("greetings", Lightbox)    // stimulus-components Controller
   }, [])
 
   return <Component {...pageProps} />
