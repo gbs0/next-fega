@@ -93,7 +93,7 @@ export default class extends Controller {
         Mas não se preocupe, você ainda uma chance, ou pelo menos algumas...
       </p>
     </div>
-    <a href="#" class="" data-controller="redirect" data-action="click->redirect#redirect_to" data-redirect-url-value="/spin"><i class="fa fa-thumbs-up"></i> OK, me leve a próxima etapa!</a>
+    <a href="#" class="" data-controller="redirect" data-action="click->redirect#to_url" data-redirect-url-value="/spin"><i class="fa fa-thumbs-up"></i> OK, me leve a próxima etapa!</a>
       `
     Swal.fire({
       title: '',

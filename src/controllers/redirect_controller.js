@@ -8,7 +8,7 @@ export default class extends Controller {
         this.element.setAttribute("disabled", "")
     }
 
-    redirect_to(event) {
+    to_url(event) {
       event.preventDefault()
       window.location.href = this.urlValue
     }
