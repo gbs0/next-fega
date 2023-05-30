@@ -25,6 +25,7 @@ export default class extends Controller {
     }
     this.setCounter()
     this.cleanList()
+    this.invokeModal()
   }
 
   dispatch(event){
@@ -79,13 +80,15 @@ export default class extends Controller {
   }
 
   invokeModal() {
-    let sweetModal = `
+    let sweetModalContent = `<div></div>
+    <div style="width:480px">
+    <iframe frameBorder="0" height="200" src="https://giphy.com/embed/5vqdMdZw3xCEarniOU/video" width="480"></iframe>
+    </div>
       `
     Swal.fire({
       title: '<strong>Infelizmente suas escolhas <u>acabaram</u></strong>',
       icon: 'error',
-      html:
-        sweetModal,
+      html: sweetModalContent,
       showCloseButton: false,
       showCancelButton: false,
       focusConfirm: false,
