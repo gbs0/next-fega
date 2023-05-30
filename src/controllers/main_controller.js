@@ -85,8 +85,8 @@ export default class extends Controller {
           " Não é de hoje que sabemos que não podemos controlar nosso destino e o que habita em nós . "
       </em><em>- MC Gorilla</em></p>
     </div>
-    <div style="width:480px">
-    <iframe frameBorder="0" height="200" src="https://giphy.com/embed/5vqdMdZw3xCEarniOU/video" width="480"></iframe>
+    <div class="flex justify-center">
+    <iframe autofocus="false" frameBorder="0" height="200" src="https://giphy.com/embed/5vqdMdZw3xCEarniOU/video" width="380"></iframe>
     </div>
     <div>
       <p class="my-3 sm:mt-6 text-base text-gray-800 md:text-sm">
