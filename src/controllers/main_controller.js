@@ -80,21 +80,32 @@ export default class extends Controller {
   }
 
   invokeModal() {
-    let sweetModalContent = `<div></div>
+    let sweetModalContent = `<div class="my-4">
+      <p class="mt-3 sm:mt-6 text-base text-gray-800 md:text-sm"><em>
+          " Não é de hoje que sabemos que não podemos controlar nosso destino e o que habita em nós . "
+      </em><em>- MC Gorilla</em></p>
+    </div>
     <div style="width:480px">
     <iframe frameBorder="0" height="200" src="https://giphy.com/embed/5vqdMdZw3xCEarniOU/video" width="480"></iframe>
     </div>
+    <div>
+      <p class="mt-3 sm:mt-6 text-base text-gray-800 md:text-sm">
+        Mas não se preocupe, você ainda uma chance, ou pelo menos algumas...
+      </p>
+    </div>
+    <a href="#" class="" data-controller="redirect" data-action="click->redirect#redirect_to" data-redirect-url-value="/spin"><i class="fa fa-thumbs-up"></i> OK, me leve a próxima etapa!</a>
       `
     Swal.fire({
-      title: '<strong>Infelizmente suas escolhas <u>acabaram</u></strong>',
+      title: '',
       icon: 'error',
       html: sweetModalContent,
       showCloseButton: false,
       showCancelButton: false,
-      focusConfirm: false,
+      showConfirmButton: false,
+      focusConfirm: true,
       confirmButtonText:
-        '<a href="/spin"><i class="fa fa-thumbs-up"></i> OK, quero continuar!</a>',
-      confirmButtonAriaLabel: 'Thumbs up, great!',
+        '<a class="d-none" data-controller="redirect" data-action="click->redirect#redirect_to" data-redirect-url-value="/spin"><i class="fa fa-thumbs-up"></i> OK, me leve a próxima etapa!</a>',
+      confirmButtonAriaLabel: 'Ok, me leve a próxima etapa!',
       cancelButtonText:
         '<i class="fa fa-thumbs-down"></i>',
       cancelButtonAriaLabel: 'Thumbs down'
