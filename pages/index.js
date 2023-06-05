@@ -24,8 +24,8 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <a href="/main" className={styles.card}>
-            <h3>Iniciar experiência &rarr;</h3>
+          <a href="/others/tutorial" className={styles.card}>
+            <h3>Iniciar &rarr;</h3>
             <p>Descubra respostas profundas sobre o que está por vir...</p>
           </a>
 
