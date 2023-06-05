@@ -8,6 +8,7 @@ export default function Main() {
             <Head>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
                 <title>Next Fega</title>
+                <script src="./assets/vendor/preline/dist/preline.js" defer="true"></script>
             </Head>
             <div className="max-w-[50rem] flex flex-col mx-auto w-full h-full">
                 <h1 className="py-2 mt-5 text-lg text-center text-gray-300">Gire a roleta!</h1>

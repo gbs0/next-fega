@@ -6,6 +6,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
+        <script src="./assets/vendor/preline/dist/preline.js" defer="true"></script>
         <title>Next Fega</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -39,7 +40,6 @@ export default function Home() {
           </a>
 
         </div>
-        <script src="./assets/vendor/preline/dist/preline.js"></script>
       </main>
 
       <footer>

@@ -10,6 +10,7 @@ import 'lightgallery/css/lightgallery.css'
 
 const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
+    import('preline')
     window.Stimulus = Application.start()
     Stimulus.register("hello", HelloController)
     Stimulus.register("main", MainController)
