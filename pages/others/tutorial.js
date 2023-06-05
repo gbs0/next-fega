@@ -66,10 +66,10 @@ export default function Home() {
 
                 <div>
                 <h3 className="md:text-lg font-semibold text-gray-800">
-                    How does Preline's pricing work?
+                    Afinal, quais são os meus objetivos?
                 </h3>
                 <p className="mt-1 text-gray-500">
-                    Our subscriptions are tiered. Understanding the task at hand and ironing out the wrinkles is key.
+                    Cada etapa pode ter diferentes objetivos. Isso pode envolver coletar uma certa quantidade de itens ou obter uma pontuação mínima para avançar.
                 </p>
                 </div>
             </div>
