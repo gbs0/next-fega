@@ -9,23 +9,47 @@ export default function Main() {
                 <title>Next Fega</title>
                 <script src="./assets/vendor/preline/dist/preline.js" defer="true"></script>
             </Head>
-            <div className="max-w-[50rem] flex flex-col mx-auto w-full h-full">
+            <div className="max-w-[50rem] flex flex-col mx-auto w-full h-full" data-controller="main">
                 <main id="content" role="main">
                 <div className="text-center py-10 px-4 sm:px-6 lg:px-8">
-                    <h1 className="block text-2xl font-bold text-white sm:text-4xl">Que os Jogos Comecem!</h1>
-                    <p className="mt-3 text-lg text-gray-300">Isso não é um teste, você está com o poder de escolha de algumas coisas quem podem mudar o seu relacionamento, portanto, escolha com sabedoria...</p>
+                    <section className="header">
+                        <h1 className="block text-2xl font-bold text-white sm:text-4xl">O destino está em suas mãos!</h1>
+                    </section>
+                    <section className="title">
+                        <p className="mt-3 text-md text-gray-300">Cada escolha que você fizer agora pode mudar o rumo de seu relacionamento.</p>
+                        <p className="mt-3 text-md text-gray-300">Não se engane, isso não é um simples teste.</p>
+                    </section>
+                    <hr className="my-5"></hr>
+                    <section className="subtitle text-left">
+                        <p className="mt-3 text-md text-gray-300">
+                        Os itens à sua escolha podem parecer apenas meros adjetivos, mas são símbolos de desejos, esperanças e sonhos. Suas escolhas determinarão se essas aspirações se tornarão realidade ou se desvanecerão como fumaça.
+                        </p>
+                        <p className="mt-3 text-md text-gray-300">
+                        Não tome suas decisões levianamente, pois elas refletirão sua alma e moldarão a teia complexa de relacionamentos que você constrói.
+                        </p>
+                    </section>
+                    <section className="scenario text-left">
+                        <p className="mt-3 text-md text-gray-300">Escolha com sabedoria, pois a felicidade ou o desespero aguardam nas escolhas traçadas por seus dedos.</p>
+                        <p className="mt-3 text-md text-gray-300">O tempo não espera por ninguém, abrace essa responsabilidade, pois cada clique nessa tela é uma sentença que ecoará através dos anos.</p>
+                    </section>
+                    <section className="final text-left">
+                        <p className="mt-3 text-md text-gray-300">Agora, escolha, com a seriedade de quem sabe que as decisões feitas aqui transcenderão as fronteiras deste momento, permeando os véus da realidade.</p>
+                        <p className="mt-3 text-md text-gray-300">Que seu destino se torne uma obra-prima escrita com cliques corajosos e intenções verdadeiras.</p>
+                    </section>
                     
-                    <div className="mt-5 flex flex-col justify-center items-center gap-2 sm:flex-row sm:gap-3">
+                    <h6 className="text-xl mt-3 text-white hidden" data-main-target="tip"> Desça a página quando estiver pronto(a)!</h6>
+                    
+                    <div className="mt-5 pt-5 flex flex-col justify-center items-center gap-2 sm:flex-row sm:gap-3">
                         <a className="w-full sm:w-auto inline-flex justify-center items-center gap-x-3.5 text-center border border-2 border-gray-600 shadow-sm text-sm font-medium rounded-md text-gray-300 hover:text-white hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition py-3 px-4" href="/">
                             <svg className="w-2.5 h-2.5" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path d="M11.2792 1.64001L5.63273 7.28646C5.43747 7.48172 5.43747 7.79831 5.63273 7.99357L11.2792 13.64" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                             </svg>
-                            Volte ao Início
+                            Voltar ao Início
                         </a>
                     </div>
                 </div>
 
-                <div className="container mx-auto px-4" data-controller="main">
+                <div className="container mx-auto px-4">
                     <div className="flex flex-row items-center justify-between">
                         <h2 className="mt-3 mb-3 text-lg text-gray-300">Selecione algumas das opções abaixo:</h2>
                         <p hidden className="text-lg text-gray-300">Voce pode escolher: <span data-main-target="counter">1</span> opções.</p>

@@ -3,9 +3,16 @@ import Swal from 'sweetalert2'
 import toastr from 'toastr'
 
 export default class extends Controller {
-  static targets = ['counter', 'list', 'pill']
+  static targets = ['counter', 'list', 'pill', 'tip']
   
   connect() {
+    this.showMessage(20000, this.tipTarget)
+    this.setToastr()
+    this.setCounter()
+    this.cleanList()
+  }
+  
+  setToastr() {
     toastr.options = {
       "closeButton": false,
       "debug": false,
@@ -23,11 +30,14 @@ export default class extends Controller {
       "showMethod": "fadeIn",
       "hideMethod": "fadeOut"
     }
-    this.setCounter()
-    this.cleanList()
-    this.invokeModal()
   }
 
+  showMessage(miliseconds, target) {
+    setTimeout(() => {
+      target.classList.remove("hidden")
+    }, miliseconds);
+  }
+  
   dispatch(event){
     if (event.currentTarget.checked) {
         this.insertPillInList(event.currentTarget)
@@ -82,15 +92,18 @@ export default class extends Controller {
     let modalTitle = `<span class="max-w-[10rem] py-1.5 px-3 truncate whitespace-nowrap inline-block rounded-md text-sm font-medium bg-blue-100 text-blue-800">Você falhou 😢</span>`
     let sweetModalContent = `<div class="mb-4">
       <p class="text-base text-gray-800 md:text-sm"><em>
-          " Não é de hoje que sabemos que não podemos controlar nosso destino e o que habita em nós . "
-      </em><em>- MC Gorilla</em></p>
+          "Não importa o quão brilhante e vitorioso seja o seu passado, você ainda pode perder espetacularmente no presente."
+      </em><em>- Friedrich Nietzsche</em></p>
     </div>
     <div class="flex justify-center">
-    <iframe autofocus="false" frameBorder="0" height="200" src="https://giphy.com/embed/5vqdMdZw3xCEarniOU/video" width="380"></iframe>
+      <iframe src="https://giphy.com/embed/MMFtyqOBK9rOlSZQK5" width="400" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
     </div>
     <div>
       <p class="my-3 sm:mt-6 text-base text-gray-800 md:text-sm">
-        Mas não se preocupe, você ainda uma chance, ou pelo menos algumas...
+      Sabe, nem todo mundo pode ter o que é preciso para ser feliz.<br>
+      E você, bem, você mostrou isso com <strong>muita clareza</strong>.<br>
+      Mas não desanime, você pode encontrar esperança em saber que pelo menos alguém em algum lugar está te <strong>apoiando</strong> nas suas derrotas, e nas vitórias também.<br>
+      Então, dê um sorriso, levante a cabeça e <strong>tente novamente</strong>.<br> Quem sabe, com um pouco de prática, você possa se tornar um perdedor(a) ainda melhor, boa sorte! Você vai precisar.
       </p>
       
     </div>
@@ -99,8 +112,9 @@ export default class extends Controller {
       `
     Swal.fire({
       title: modalTitle,
-      icon: 'error',
+      icon: '',
       html: sweetModalContent,
+      
       showCloseButton: false,
       showCancelButton: false,
       showConfirmButton: false,
