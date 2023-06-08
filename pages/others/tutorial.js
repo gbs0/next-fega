@@ -98,7 +98,7 @@ export default function Home() {
         <div className="policy" data-controller="redirect">
             <div className="flex text-left">
                 <input type="checkbox" data-redirect-target="checkbox" className="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 focus:ring-blue-500" id="hs-default-checkbox"/>
-                <label className="text-sm text-gray-500 ml-1 dark:text-gray-400">Aceito os termos e quero continuar.</label>
+                <label className="text-sm text-gray-500 ml-3 dark:text-gray-400">Aceito os termos e quero continuar.</label>
             </div>
             
             <div>
