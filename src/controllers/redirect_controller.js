@@ -13,7 +13,7 @@ export default class extends Controller {
       if (this.checkboxTarget) {
         if (this.checkboxTarget.checked) {
           this.badgeTarget.classList.add("hidden")
-          window.location.href = this.urlValue  
+          window.location.href = event.target.dataset.redirectUrlValue
         } else {
           this.badgeTarget.classList.remove("hidden")
         }
