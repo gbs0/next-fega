@@ -59,7 +59,7 @@ export default class extends Controller {
     }
 
     setCounter() {
-        this.counterTarget.innerText = 2
+        this.counterTarget.innerText = 14
     }
 
     decrementCounter() {
